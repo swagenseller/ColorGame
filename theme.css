@@ -1,9 +1,14 @@
+:root {
+    --grey-back:  #d9d9d9;
+    --selected: #a5faf7;
+}
+
 #container{
     margin: 0 auto;
     max-width: 600px;
 }
 body{
-    background-color: #d9d9d9;
+    background-color: var(--grey-back);
 }
 h1 {
     text-align: center;
@@ -16,4 +21,14 @@ h1 {
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+}
+#stripe {
+    background-color:white;
+    height: 30px;
+    text-align: center;
+    color: black;
+}
+
+.selected {
+    background-color:var(--selected);
 }
