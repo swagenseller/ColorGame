@@ -13,6 +13,7 @@ var hardBtn = document.querySelector("#hardBt");
 easyBtn.addEventListener("click", function(){
     easyBtn.classList.add("selected");
     hardBtn.classList.remove("selected");
+    h1.style.background = "#d9d9d9";
     difficulty = 3
     assignColors(difficulty);
     pickColor(difficulty);
@@ -22,6 +23,7 @@ easyBtn.addEventListener("click", function(){
 hardBtn.addEventListener("click", function(){
     easyBtn.classList.remove("selected");
     hardBtn.classList.add("selected");
+    h1.style.background = "#d9d9d9";
     difficulty = 6;
     assignColors(difficulty);
     pickColor(difficulty);
