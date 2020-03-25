@@ -10,9 +10,7 @@ var resetButton = document.querySelector("#reset");
 var modeBtn = document.querySelectorAll(".mode");
 
 
-assignColors(6);
-pickColor(6);
-setColors(6);
+reset(6);
 
 for(let i=0; i< modeBtn.length; i++){
     modeBtn[i].addEventListener("click", function(){
@@ -40,7 +38,7 @@ resetButton.addEventListener("click", function(){
 
 
 function setColors(diff){
-    //resetButton.textContent = "New Colors"
+    resetButton.textContent = "New Colors"
     for (var i = 0; i < diff; i++){
         squares[i].style.display = "inline";
         // give each square a color
