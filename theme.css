@@ -64,6 +64,7 @@ button {
     color: var(--btColor);
     letter-spacing: 1px;
     font-size: inherit;
+    outline: none;
     transition: all .4s;
     --webkit-transition: all .4s;
     --moz-transition: all .4s;

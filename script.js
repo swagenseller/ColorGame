@@ -7,52 +7,40 @@ var squares = document.getElementsByClassName("square");
 var messageDisplay = document.querySelector("#message")
 var h1 = document.querySelector("h1")
 var resetButton = document.querySelector("#reset");
-var easyBtn = document.querySelector("#easyBt");
-var hardBtn = document.querySelector("#hardBt");
-
-easyBtn.addEventListener("click", function(){
-    easyBtn.classList.add("selected");
-    hardBtn.classList.remove("selected");
-    h1.style.background = "#48d1cd";
-    difficulty = 3
-    assignColors(difficulty);
-    pickColor(difficulty);
-    setColors(difficulty);
-})
-
-hardBtn.addEventListener("click", function(){
-    easyBtn.classList.remove("selected");
-    hardBtn.classList.add("selected");
-    h1.style.background = "#48d1cd";
-    difficulty = 6;
-    assignColors(difficulty);
-    pickColor(difficulty);
-    setColors(difficulty);
-})
+var modeBtn = document.querySelectorAll(".mode");
 
 
-resetButton.addEventListener("click", function(){
-    resetButton.textContent = "New Colors";
-    h1.style.background = "#48d1cd";
-    assignColors(difficulty); //assigns new random colors
-    pickColor(difficulty); // picks the new answer color
-    setColors(difficulty);
-})
-
-// creates 6 random colors in the colors array
-/*for(let i =0; i<squares.length; i++){
-    let r = Math.floor(Math.random() * 256)
-    let g = Math.floor(Math.random() * 256)
-    let b = Math.floor(Math.random() * 256)
-    colors[i] = "rgb("+ r +", "+ g +", "+ b +")";
-} */
 assignColors(6);
-// sets the answer color
 pickColor(6);
 setColors(6);
 
+for(let i=0; i< modeBtn.length; i++){
+    modeBtn[i].addEventListener("click", function(){
+        modeBtn[0].classList.remove("selected");
+        modeBtn[1].classList.remove("selected");
+        this.classList.add("selected");
+        if(this.textContent === "Easy"){
+            reset(3);
+        } else if(this.textContent === "Hard"){
+            reset(6);
+        }
+
+    })
+}
+
+
+
+
+resetButton.addEventListener("click", function(){
+   // resetButton.textContent = "New Colors";
+    reset(difficulty);
+})
+
+
+
+
 function setColors(diff){
-    resetButton.textContent = "New Colors"
+    //resetButton.textContent = "New Colors"
     for (var i = 0; i < diff; i++){
         squares[i].style.display = "inline";
         // give each square a color
@@ -97,6 +85,13 @@ function assignColors(num){
     }
 }
 
+function reset(diff){
+    h1.style.background = "#48d1cd";
+    messageDisplay.innerHTML = "";
+    assignColors(diff); //assigns new random colors
+    pickColor(diff); // picks the new answer color
+    setColors(diff);
+}
 
 // returns a string based on a random color
 function ranColor(){
