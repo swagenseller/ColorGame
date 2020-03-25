@@ -1,19 +1,34 @@
 :root {
     --grey-back:  #d9d9d9;
     --selected: #a5faf7;
+    --btColor: #48d1cd;
 }
 
 #container{
-    margin: 0 auto;
+    margin: 20px auto;
     max-width: 600px;
 }
 body{
     background-color: var(--grey-back);
+    margin:0;
+    font-family: "Montserrat", "Avenir";
+    font-weight: normal;
 }
 h1 {
     text-align: center;
+    line-height: 1.1;
+    color: white;
+    font-weight: normal;
+    background-color: var(--btColor);
+    margin: 0;
+    padding: 20px 0;
     
 }
+#colorDisplay {
+    font-size: 150%;
+    
+}
+
 .square {
     border-radius: 25%;
     width: 30%;
@@ -21,6 +36,14 @@ h1 {
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    transition: background 0.5s;
+    --webkit-transition: background 0.5s;
+    --moz-transition: background 0.5s;
+}
+
+#message {
+    display: inline-block;
+    width: 20%;
 }
 #stripe {
     background-color:white;
@@ -31,4 +54,22 @@ h1 {
 
 .selected {
     background-color:var(--selected);
+}
+
+button {
+    border: none;
+    background: none;
+    height: 100%;
+    font-weight: 700;
+    color: var(--btColor);
+    letter-spacing: 1px;
+    font-size: inherit;
+    transition: all .4s;
+    --webkit-transition: all .4s;
+    --moz-transition: all .4s;
+}
+
+button:hover {
+    color: var(--grey-back);
+    background: var(--selected);
 }

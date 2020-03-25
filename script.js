@@ -13,7 +13,7 @@ var hardBtn = document.querySelector("#hardBt");
 easyBtn.addEventListener("click", function(){
     easyBtn.classList.add("selected");
     hardBtn.classList.remove("selected");
-    h1.style.background = "#d9d9d9";
+    h1.style.background = "#48d1cd";
     difficulty = 3
     assignColors(difficulty);
     pickColor(difficulty);
@@ -23,7 +23,7 @@ easyBtn.addEventListener("click", function(){
 hardBtn.addEventListener("click", function(){
     easyBtn.classList.remove("selected");
     hardBtn.classList.add("selected");
-    h1.style.background = "#d9d9d9";
+    h1.style.background = "#48d1cd";
     difficulty = 6;
     assignColors(difficulty);
     pickColor(difficulty);
@@ -33,7 +33,7 @@ hardBtn.addEventListener("click", function(){
 
 resetButton.addEventListener("click", function(){
     resetButton.textContent = "New Colors";
-    h1.style.background = "#d9d9d9";
+    h1.style.background = "#48d1cd";
     assignColors(difficulty); //assigns new random colors
     pickColor(difficulty); // picks the new answer color
     setColors(difficulty);
@@ -87,7 +87,7 @@ function changeColors(color, diff){
 function pickColor(num){
     let ranIndex = Math.floor(Math.random() * num)
     pickedColor = colors[ranIndex]
-    colorDisplay.textContent = colors[ranIndex];
+    colorDisplay.textContent = colors[ranIndex] + "?";
 
 }
 // assigns random colors to each element in the global array
